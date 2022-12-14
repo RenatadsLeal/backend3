@@ -1,0 +1,699 @@
+{
+	"info": {
+		"_postman_id": "ad77f847-8b1c-48ae-9893-a3f25b14bb42",
+		"name": "Dentist",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17606767"
+	},
+	"item": [
+		{
+			"name": "dentist",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"surname\": \"Pedro\",\r\n    \"name\": \"Iva\",\r\n    \"registration\": \"001\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/dentists",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dentists"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Status 201",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"surname\": \"Pedro\",\r\n    \"name\": \"Iva\",\r\n    \"registration\": \"001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/dentists",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"dentists"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 03:09:19 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "69"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 3,\n        \"surname\": \"Pedro\",\n        \"name\": \"Iva\",\n        \"registration\": \"001\"\n    }\n}"
+				},
+				{
+					"name": "Status 500",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"surname\": \"Pedro\",\r\n    \"name\": \"Iva\",\r\n    \"registration\": \"001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/dentists",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"dentists"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 03:09:46 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "85"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 500,\n    \"code\": \"Internal Server Error\",\n    \"message\": \"registration already exists\"\n}"
+				}
+			]
+		},
+		{
+			"name": "dentist por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/dentists/id/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dentists",
+						"id",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Status 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/dentists/id/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"dentists",
+								"id",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 03:11:23 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "69"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 3,\n        \"surname\": \"Pedro\",\n        \"name\": \"Iva\",\n        \"registration\": \"001\"\n    }\n}"
+				},
+				{
+					"name": "Status 404",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/dentists/id/30",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"dentists",
+								"id",
+								"30"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 03:11:53 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 404,\n    \"code\": \"Not Found\",\n    \"message\": \"dentist not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "dentist por registration",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/dentists/registration/F4GH3434",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dentists",
+						"registration",
+						"F4GH3434"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Status 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/dentists/registration/F4GH3434",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"dentists",
+								"registration",
+								"F4GH3434"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 03:49:30 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "76"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 3,\n        \"surname\": \"Pedro\",\n        \"name\": \"A Ivo\",\n        \"registration\": \"F4GH3434\"\n    }\n}"
+				},
+				{
+					"name": "Status 404",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/dentists/registration/F4GH34345",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"dentists",
+								"registration",
+								"F4GH34345"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 03:50:27 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 404,\n    \"code\": \"Not Found\",\n    \"message\": \"dentist not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "dentist por id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"surname\": \"Pedro\",\r\n    \"name\": \"Ivo\",\r\n    \"registration\": \"FG$\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/dentists/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dentists",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Status 200",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"surname\": \"Pedro\",\r\n    \"name\": \"A Ivo\",\r\n    \"registration\": \"F4G\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/dentists/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"dentists",
+								"3"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 03:23:46 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "71"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 3,\n        \"surname\": \"Pedro\",\n        \"name\": \"A Ivo\",\n        \"registration\": \"F4G\"\n    }\n}"
+				},
+				{
+					"name": "Status 422",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"surname\": \"Pedro\",\r\n    \"name\": \"A Ivo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/dentists/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"dentists",
+								"3"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 03:25:19 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "69"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 422,\n    \"code\": \"Unprocessable Entity\",\n    \"message\": \"invalid json\"\n}"
+				}
+			]
+		},
+		{
+			"name": "dentist por id",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"registration\": \"F4GH343\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/dentists/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dentists",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Status 200",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"registration\": \"F4GH3434\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/dentists/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"dentists",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 03:38:01 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "76"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 3,\n        \"surname\": \"Pedro\",\n        \"name\": \"A Ivo\",\n        \"registration\": \"F4GH3434\"\n    }\n}"
+				},
+				{
+					"name": "Status 500",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"registration\": \"F4GH3434\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/dentists/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"dentists",
+								"3"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 03:39:31 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "85"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 500,\n    \"code\": \"Internal Server Error\",\n    \"message\": \"registration already exists\"\n}"
+				}
+			]
+		},
+		{
+			"name": "dentist",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/patients/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"patients",
+						"6"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Status 204",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								"1"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 03:42:44 GMT"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Status 404",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								"1"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 03:43:35 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 404,\n    \"code\": \"Not Found\",\n    \"message\": \"patient not found\"\n}"
+				}
+			]
+		}
+	]
+}

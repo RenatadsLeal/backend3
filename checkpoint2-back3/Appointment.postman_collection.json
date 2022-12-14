@@ -1,0 +1,949 @@
+{
+	"info": {
+		"_postman_id": "5219efa7-08bd-4f6f-864c-fdfb26f69724",
+		"name": "Appointment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17606767"
+	},
+	"item": [
+		{
+			"name": "appointment por id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"date\": \"27/12/2022\",\r\n    \"description\": \"Limpeza dental\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/appointments/id/5/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appointments",
+						"id",
+						"5",
+						"10"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Status 201",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"27/12/2022\",\r\n    \"description\": \"Limpeza dental\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/appointments/id/5/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointments",
+								"id",
+								"5",
+								"3"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 04:01:10 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "248"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 2,\n        \"patient\": {\n            \"id\": 5,\n            \"surname\": \"Leal\",\n            \"name\": \"Renata\",\n            \"rg\": \"360706455\",\n            \"registration_date\": \"16/12/2022\"\n        },\n        \"dentist\": {\n            \"id\": 3,\n            \"surname\": \"Pedro\",\n            \"name\": \"A Ivo\",\n            \"registration\": \"F4GH3434\"\n        },\n        \"date\": \"27/12/2022\",\n        \"description\": \"Limpeza dental\"\n    }\n}"
+				},
+				{
+					"name": "Status 500",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"27/12/2022\",\r\n    \"description\": \"Limpeza dental\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/appointments/id/5/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointments",
+								"id",
+								"5",
+								"10"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 04:03:17 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "260"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 500,\n    \"code\": \"Internal Server Error\",\n    \"message\": \"Error 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`checkpoint2`.`appointment`, CONSTRAINT `appointment_ibfk_2` FOREIGN KEY (`dentist_id`) REFERENCES `dentist` (`id`))\"\n}"
+				},
+				{
+					"name": "Status 422",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Limpeza dental\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/appointments/id/5/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointments",
+								"id",
+								"5",
+								"10"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 04:04:12 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "69"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 422,\n    \"code\": \"Unprocessable Entity\",\n    \"message\": \"invalid json\"\n}"
+				}
+			]
+		},
+		{
+			"name": "appointment por rg e registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"date\": \"27/12/2022\",\r\n    \"description\": \"Limpeza dental\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/appointments/rg-registration/360706455/F4GH3434",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appointments",
+						"rg-registration",
+						"360706455",
+						"F4GH3434"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Status 201",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"27/12/2022\",\r\n    \"description\": \"Limpeza dental\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/appointments/rg-registration/360706455/F4GH3434",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointments",
+								"rg-registration",
+								"360706455",
+								"F4GH3434"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 04:24:42 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "248"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 4,\n        \"patient\": {\n            \"id\": 5,\n            \"surname\": \"Leal\",\n            \"name\": \"Renata\",\n            \"rg\": \"360706455\",\n            \"registration_date\": \"16/12/2022\"\n        },\n        \"dentist\": {\n            \"id\": 3,\n            \"surname\": \"Pedro\",\n            \"name\": \"A Ivo\",\n            \"registration\": \"F4GH3434\"\n        },\n        \"date\": \"27/12/2022\",\n        \"description\": \"Limpeza dental\"\n    }\n}"
+				},
+				{
+					"name": "Status 422",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Limpeza dental\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/appointments/rg-registration/360706455/F4GH3434",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointments",
+								"rg-registration",
+								"360706455",
+								"F4GH3434"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 04:25:52 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "69"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 422,\n    \"code\": \"Unprocessable Entity\",\n    \"message\": \"invalid json\"\n}"
+				}
+			]
+		},
+		{
+			"name": "appointment por id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "TOKEN",
+						"value": "valor",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/appointments/id/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appointments",
+						"id",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Status 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "TOKEN",
+								"value": "valor",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/appointments/id/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointments",
+								"id",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 04:05:22 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "248"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 2,\n        \"patient\": {\n            \"id\": 5,\n            \"surname\": \"Leal\",\n            \"name\": \"Renata\",\n            \"rg\": \"360706455\",\n            \"registration_date\": \"16/12/2022\"\n        },\n        \"dentist\": {\n            \"id\": 3,\n            \"surname\": \"Pedro\",\n            \"name\": \"A Ivo\",\n            \"registration\": \"F4GH3434\"\n        },\n        \"date\": \"27/12/2022\",\n        \"description\": \"Limpeza dental\"\n    }\n}"
+				},
+				{
+					"name": "Status 404",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "TOKEN",
+								"value": "valor",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/appointments/id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointments",
+								"id",
+								"1"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 04:05:41 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "67"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 404,\n    \"code\": \"Not Found\",\n    \"message\": \"appointment not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "appointment por rg",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "TOKEN",
+						"value": "valor",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/appointments/rg/360706455",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appointments",
+						"rg",
+						"360706455"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Status 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "TOKEN",
+								"value": "valor",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/appointments/rg/360706455",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointments",
+								"rg",
+								"360706455"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 04:09:18 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "250"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"patient\": {\n                \"id\": 5,\n                \"surname\": \"Leal\",\n                \"name\": \"Renata\",\n                \"rg\": \"360706455\",\n                \"registration_date\": \"16/12/2022\"\n            },\n            \"dentist\": {\n                \"id\": 3,\n                \"surname\": \"Pedro\",\n                \"name\": \"A Ivo\",\n                \"registration\": \"F4GH3434\"\n            },\n            \"date\": \"27/12/2022\",\n            \"description\": \"Limpeza dental\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "appointment",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"patient_id\": 5, \r\n    \"date\": \"27/12/2022\",\r\n    \"description\": \"Limpeza tártaro 2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/appointments/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appointments",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Status 200",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"patient_id\": 5,\r\n    \"dentist_id\": 3, \r\n    \"date\": \"27/12/2022\",\r\n    \"description\": \"Limpeza tártaro 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/appointments/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointments",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 04:16:03 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "252"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 2,\n        \"patient\": {\n            \"id\": 5,\n            \"surname\": \"Leal\",\n            \"name\": \"Renata\",\n            \"rg\": \"360706455\",\n            \"registration_date\": \"16/12/2022\"\n        },\n        \"dentist\": {\n            \"id\": 3,\n            \"surname\": \"Pedro\",\n            \"name\": \"A Ivo\",\n            \"registration\": \"F4GH3434\"\n        },\n        \"date\": \"27/12/2022\",\n        \"description\": \"Limpeza tártaro 2\"\n    }\n}"
+				},
+				{
+					"name": "Status 422",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"patient_id\": 5, \r\n    \"date\": \"27/12/2022\",\r\n    \"description\": \"Limpeza tártaro 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/appointments/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointments",
+								"2"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 04:16:40 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "69"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 422,\n    \"code\": \"Unprocessable Entity\",\n    \"message\": \"invalid json\"\n}"
+				}
+			]
+		},
+		{
+			"name": "appointment",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"date\": \"29/12/2022\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/appointments/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appointments",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Status 200",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"29/12/2022\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/appointments/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointments",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 04:18:54 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "252"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 2,\n        \"patient\": {\n            \"id\": 5,\n            \"surname\": \"Leal\",\n            \"name\": \"Renata\",\n            \"rg\": \"360706455\",\n            \"registration_date\": \"16/12/2022\"\n        },\n        \"dentist\": {\n            \"id\": 3,\n            \"surname\": \"Pedro\",\n            \"name\": \"A Ivo\",\n            \"registration\": \"F4GH3434\"\n        },\n        \"date\": \"29/12/2022\",\n        \"description\": \"Limpeza tártaro 2\"\n    }\n}"
+				},
+				{
+					"name": "Status 500",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"29/12/2022\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/appointments/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointments",
+								"5"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 04:19:41 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "79"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 500,\n    \"code\": \"Internal Server Error\",\n    \"message\": \"appointment not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "appointment",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/appointments/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"appointments",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Status 204",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/appointments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointments",
+								"1"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 03:42:24 GMT"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Status 404",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/appointments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"appointments",
+								"1"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 03:51:59 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "67"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 404,\n    \"code\": \"Not Found\",\n    \"message\": \"appointment not found\"\n}"
+				}
+			]
+		}
+	]
+}

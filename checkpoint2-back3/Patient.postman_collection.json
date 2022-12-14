@@ -1,0 +1,815 @@
+{
+	"info": {
+		"_postman_id": "53c6a34a-988b-4e3c-8856-530b1fc88780",
+		"name": "Patient",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17606767"
+	},
+	"item": [
+		{
+			"name": "patient",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Renata\",\r\n    \"surname\": \"Hakamada\",\r\n    \"rg\": \"360106430\",\r\n    \"registration_date\": \"20/12/2022\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/patients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"patients"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Status 201",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Carolina\",\r\n    \"surname\": \"Hakamada\",\r\n    \"rg\": \"360106430\",\r\n    \"registration_date\": \"20/12/2022\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 02:53:52 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "106"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 5,\n        \"surname\": \"Hakamada\",\n        \"name\": \"Carolina\",\n        \"rg\": \"360106430\",\n        \"registration_date\": \"20/12/2022\"\n    }\n}"
+				},
+				{
+					"name": "Status 422",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Renata\",\r\n    \"surname\": \"Hakamada\",\r\n    \"registration_date\": \"20/12/2022\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 02:58:11 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "69"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 422,\n    \"code\": \"Unprocessable Entity\",\n    \"message\": \"invalid json\"\n}"
+				}
+			]
+		},
+		{
+			"name": "patient por id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "TOKEN",
+						"value": "valor",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/patients/id/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"patients",
+						"id",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Status 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "TOKEN",
+								"value": "valor",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients/id/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								"id",
+								"5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 02:58:29 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "106"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 5,\n        \"surname\": \"Carolina\",\n        \"name\": \"Hakamada\",\n        \"rg\": \"360106430\",\n        \"registration_date\": \"20/12/2022\"\n    }\n}"
+				},
+				{
+					"name": "Status 404",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "TOKEN",
+								"value": "valor",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients/id/50",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								"id",
+								"50"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 02:58:59 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 404,\n    \"code\": \"Not Found\",\n    \"message\": \"patient not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "patient por rg",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "TOKEN",
+						"value": "valor",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/patients/rg/360106430",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"patients",
+						"rg",
+						"360106430"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Status 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "TOKEN",
+								"value": "valor",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients/rg/360106430",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								"rg",
+								"360106430"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 03:00:38 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "106"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 5,\n        \"surname\": \"Carolina\",\n        \"name\": \"Hakamada\",\n        \"rg\": \"360106430\",\n        \"registration_date\": \"20/12/2022\"\n    }\n}"
+				},
+				{
+					"name": "Status 404",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "TOKEN",
+								"value": "valor",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients/rg/3601064300",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								"rg",
+								"3601064300"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 03:01:00 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 404,\n    \"code\": \"Not Found\",\n    \"message\": \"patient not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "patient",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Renata\",\r\n    \"surname\": \"da Silva Leal\",\r\n    \"rg\": \"360706455\",\r\n    \"registration_date\": \"16/12/2022\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/patients/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"patients",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Status 200",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Renata\",\r\n    \"surname\": \"da Silva Leal\",\r\n    \"rg\": \"360706455\",\r\n    \"registration_date\": \"16/12/2022\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								"5"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 03:03:40 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "109"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 5,\n        \"surname\": \"da Silva Leal\",\n        \"name\": \"Renata\",\n        \"rg\": \"360706455\",\n        \"registration_date\": \"16/12/2022\"\n    }\n}"
+				},
+				{
+					"name": "Status 422",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Renata\",\r\n    \"rg\": \"360706455\",\r\n    \"registration_date\": \"16/12/2022\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								"5"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 03:04:30 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "69"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 422,\n    \"code\": \"Unprocessable Entity\",\n    \"message\": \"invalid json\"\n}"
+				}
+			]
+		},
+		{
+			"name": "patient",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"surname\": \"Leal\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/patients/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"patients",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Status 200",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"surname\": \"Leal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								"5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 03:05:28 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "100"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 5,\n        \"surname\": \"Leal\",\n        \"name\": \"Renata\",\n        \"rg\": \"360706455\",\n        \"registration_date\": \"16/12/2022\"\n    }\n}"
+				},
+				{
+					"name": "Status 500",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rg\": \"360106431\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								"5"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 03:06:41 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "75"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 500,\n    \"code\": \"Internal Server Error\",\n    \"message\": \"rg already exists\"\n}"
+				}
+			]
+		},
+		{
+			"name": "patient",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/patients/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"patients",
+						"6"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Status 204",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								"6"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 03:07:17 GMT"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Status 404",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/patients/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"patients",
+								"6"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 14 Dec 2022 03:07:40 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "63"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 404,\n    \"code\": \"Not Found\",\n    \"message\": \"patient not found\"\n}"
+				}
+			]
+		}
+	]
+}
